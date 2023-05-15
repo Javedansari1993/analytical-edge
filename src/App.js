@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchUsers, fetchPosts, fetchComments } from "./fatchApi"; // Assuming you have separate API functions for each endpoint
+import { fetchUsers, fetchPosts, fetchComments } from "./fatchApi";
 import { commentsData, postsData, usersData } from "./redux/actions";
 import DataGrid from "./components/DataGrid";
 
