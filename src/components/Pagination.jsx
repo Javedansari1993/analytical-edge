@@ -7,7 +7,7 @@ const Pagination = ({currentPage, setCurrentPage, totalPage}) => {
         >
             <button
                 className={`btn btn-sm btn-secondary ${
-                    currentPage == 1 ? "disabled" : ""
+                    currentPage === 1 ? "disabled" : ""
                 }`}
                 onClick={() => setCurrentPage(+currentPage - 1)}
             >
@@ -19,7 +19,7 @@ const Pagination = ({currentPage, setCurrentPage, totalPage}) => {
             </span>
             <button
                 className={`btn btn-sm btn-secondary  ${
-                    totalPage == currentPage ? "disabled" : ""
+                    totalPage === currentPage ? "disabled" : ""
                 }`}
                 onClick={() => setCurrentPage(+currentPage + 1)}
             >

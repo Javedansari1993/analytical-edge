@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUsers, fetchPosts, fetchComments } from "./fatchApi";
-import { commentsData, postsData, setPageCount, usersData } from "./redux/actions";
+import { commentsData, postsData, usersData } from "./redux/actions";
 import DataGrid from "./components/DataGrid";
 import Pagination from "./components/Pagination";
 
@@ -115,6 +115,7 @@ const App = () => {
         } else if (isData === "comments") {
             dispatch(commentsData(sortedDataFinal));
         }
+        setSearchWord("")
     };
 
     console.log('currentPage' , currentPage , cache)
@@ -131,6 +132,7 @@ const App = () => {
                             }`}
                             onClick={() => {
                                 setCurrentPage(1);
+                                setSearchWord("")
                                 fetchUsers(dispatch, setIsData, 1)
                             }}
                         >
@@ -144,6 +146,7 @@ const App = () => {
                             }`}
                             onClick={() => {
                                 setCurrentPage(1);
+                                setSearchWord("");
                                 fetchPosts(dispatch, setIsData, 1)
                             }}
                         >
@@ -157,6 +160,7 @@ const App = () => {
                             }`}
                             onClick={() =>{
                                 setCurrentPage(1);
+                                setSearchWord("");
                                 fetchComments(dispatch, setIsData, 1)
                             }}
                         >
