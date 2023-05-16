@@ -15,6 +15,16 @@ export const commentsData = (data) => ({
     payload: data,
   });
 
+  export const setPageCount = (data) => ({
+    type: 'SET_PAGE_COUNT',
+    payload: data,
+  });
+
+  export const setCache = (key , value) => ({
+    type: 'SET_CACHE',
+    payload: {key,value}
+  })
+
   // export const commentData = (data) => ({
   //   type: 'SET_DATA',
   //   payload: data,

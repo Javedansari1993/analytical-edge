@@ -4,7 +4,8 @@ const initialState = {
   commentData: null,
   postData: null,
   userData: null,
-  
+  pageCount: 1,
+  cache: {}
   };
   
   const rootReducer = (state = initialState, action) => {
@@ -24,6 +25,19 @@ const initialState = {
           ...state,
           userData: action.payload,
         };
+        case 'SET_PAGE_COUNT':
+        return {
+          ...state,
+          pageCount: action.payload,
+        };
+        case 'SET_CACHE':
+          return {
+            ...state,
+            cache: {
+              ...state.cache,
+              [action.payload.key]: action.payload.value
+            }
+          }
       default:
         return state;
     }

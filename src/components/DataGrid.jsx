@@ -7,8 +7,8 @@ const DataGrid = ({ dataGrid, isData }) => {
                 isData === "users" &&
                 dataGrid.map((item, index) => (
                     <tr key={index}>
+                        <td>{item.id}</td>
                         <td>{item.name}</td>
-                        <td>{item.username}</td>
                         <td>{item.email}</td>
                         {/* Add more cells */}
                     </tr>
@@ -28,6 +28,8 @@ const DataGrid = ({ dataGrid, isData }) => {
                     <tr key={index}>
                         <td>{item.id}</td>
                         <td>{item.name}</td>
+                        <td>{item.email}</td>
+                        <td>{item.body}</td>
                         {/* Add more cells */}
                     </tr>
                 ))}
